@@ -1,8 +1,11 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import 'hammerjs';
 import { ArticleModule } from './article/article.module';
 import { AuthModule } from './auth/auth.module';
 import { EditorModule } from './editor/editor.module';
@@ -22,6 +25,7 @@ import {
   TagsService,
   UserService
 } from './shared';
+import { TestComponent } from './test/test.component';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -29,7 +33,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,11 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     ProfileModule,
     rootRouting,
     SharedModule,
-    SettingsModule
+    SettingsModule,
+    BrowserAnimationsModule,
+    [MdButtonModule,
+    MdCheckboxModule]
+    
   ],
   providers: [
     ApiService,

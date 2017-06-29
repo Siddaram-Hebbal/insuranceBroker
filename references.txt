@@ -1,0 +1,114 @@
+*****************************************************************
+Stories describing how to do more with the Angular CLI
+https://github.com/angular/angular-cli/wiki/stories
+
+https://cli.angular.io/
+
+*****************************************************************
+
+
+https://github.com/angular/material2/blob/master/guides/getting-started.md
+
+https://material.angular.io/guide/getting-started
+
+https://material.angular.io/components/input/overview
+
+
+
+To add Angular MAterial 2 design into the project follow steps from the above link.
+
+In brief if offline do these steps.
+1. Step 1: Install Angular Material
+
+npm install --save @angular/material
+
+2. Step 2: Animations
+
+Some Material components depend on the Angular animations module in order to be able to do more advanced transitions. If you want these animations to work in your app, you have to install the @angular/animations module and include the BrowserAnimationsModule in your app.
+
+npm install --save @angular/animations
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  ...
+  imports: [BrowserAnimationsModule],
+  ...
+})
+export class PizzaPartyAppModule { }
+
+
+3. Step 3: Import the component modules
+
+Import the NgModule for each component you want to use:
+
+import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+
+@NgModule({
+  ...
+  imports: [MdButtonModule, MdCheckboxModule],
+  ...
+})
+export class PizzaPartyAppModule { }
+
+4. Step 4: Include a theme
+
+Including a theme is required to apply all of the core and theme styles to your application.
+
+To get started with a prebuilt theme, include the following in your app's index.html:
+
+<link href="../node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+Note that your app's project structure may have a different relative location for your node_modules.
+
+5. Step 5: Gesture Support
+
+Some components (md-slide-toggle, md-slider, mdTooltip) rely on HammerJS for gestures. In order to get the full feature-set of these components, HammerJS must be loaded into the application.
+
+You can add HammerJS to your application via npm, a CDN (such as the Google CDN), or served directly from your app.
+
+To install via npm, use the following command:
+
+npm install --save hammerjs
+After installing, import it on your app's root module.
+
+import 'hammerjs';
+
+
+6. Step 6 (Optional): Add Material Icons
+
+If you want to use the md-icon component with the official Material Design Icons, load the icon font in your index.html.
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+For more information on using Material Icons, check out the Material Icons Guide.
+
+Note that md-icon supports any font or svg icons; using Material Icons is one of many options.
+
+
+################################################################
+Other References
+-----------------
+https://angular.io/guide/setup-systemjs-anatomy
+https://angular.io/guide/quickstart
+https://angular.io/guide/styleguide
+https://angular.io/guide/reactive-forms
+https://angular.io/guide/forms
+https://angular.io/guide/template-syntax
+https://angular.io/guide/lifecycle-hooks
+https://angular.io/guide/dynamic-form
+https://thinkster.io/angularjs-es6-tutorial
+https://thinkster.io/tutorials/building-real-world-angular-2-apps
+
+http://www.syntaxsuccess.com/viewarticle/using-firebase-with-angular
+https://angular.io/tutorial/toh-pt3
+
+
+Angular 2 Routing References
+----------------------------
+https://angular.io/guide/router#routing--navigation
+https://angular.io/guide/router#browser-url-styles
+https://plnkr.co/edit/dDedVl5vP9f3jO0zNg30?p=preview
+https://angular.io/api/router/RouterModule
+https://angular.io/guide/router
+https://angular.io/guide/router#hero-routing-module
+https://angular.io/generated/live-examples/toh-pt4/eplnkr.html
+
+

@@ -16,7 +16,13 @@
                 placeholder="URL of profile picture"
                 formControlName="image" />
             </fieldset>
-
+<fieldset class="form-group">
+            <md-select placeholder="Favorite food">
+              <md-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </md-option>
+            </md-select>
+</fieldset>
             <fieldset class="form-group">
               <input class="form-control form-control-lg"
                 type="text"
@@ -61,7 +67,12 @@
           (click)="logout()">
           Or click here to logout.
         </button>
-
+        <hr/>
+        <md-input-container>
+  <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+  <button mdSuffix [mdDatepickerToggle]="picker"></button>
+</md-input-container>
+<md-datepicker #picker></md-datepicker>
       </div>
     </div>
   </div>

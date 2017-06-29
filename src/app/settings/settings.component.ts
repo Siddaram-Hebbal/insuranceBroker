@@ -1,18 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
+/*import {MdButtonModule, MdCheckboxModule} from '@angular/material';*/
 import { User, UserService } from '../shared';
+
 
 @Component({
   selector: 'settings-page',
-  templateUrl: './settings.component.html'
+  templateUrl: './settings.component.html',
+   styleUrls: ['./settings.component.css']
 })
+
+/*@NgModule({
+  
+  imports: [MdButtonModule, MdCheckboxModule]
+  
+})*/
+
 export class SettingsComponent implements OnInit {
   user: User = new User();
   settingsForm: FormGroup;
   errors: Object = {};
   isSubmitting = false;
+
+ foods = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
 
   constructor(
     private router: Router,
